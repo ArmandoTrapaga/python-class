@@ -8,7 +8,7 @@ Fecha:
 
 ## Descripción del Problema
 
-
+Soy una descripcion
 
 
 ## Especificación de Requisitos
