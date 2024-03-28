@@ -1,7 +1,7 @@
 '''
 NAME
 
-Conteo de atcg
+Conteo de ATCG
 
 VERSION
         
@@ -9,31 +9,34 @@ VERSION
 
 AUTHOR
 
-Armando Gael Gonzalez Trapaga        
+[Su nombre aquí]       
 
 DESCRIPTION
 
-Cuenta las ocurrencias de los símbolos "A", "G", "C", "T" de una cadena de ADN que lee atreves de  un archivo 
+Cuenta las ocurrencias de los símbolos "A", "T", "C", "G" de una cadena de ADN que lee a través de un archivo.
 
 CATEGORY
-        
+
+Biología Computacional
 
 USAGE
 
-    % python programName
+    % python contar_atcg.py
     
 
 ARGUMENTS
 
+- archivo: La ruta del archivo que contiene la cadena de ADN a analizar.
 
 METHOD
 
+1. contar_atcg(archivo)
+   Esta función toma un archivo de texto que contiene una cadena de ADN y cuenta las ocurrencias de los símbolos "A", "T", "C", "G" en la cadena. Si el archivo no existe o no es adecuado, imprime un mensaje de error.
 
 SEE ALSO
-
-
-        
 '''
+
+
 
 
 # ===========================================================================
