@@ -16,12 +16,15 @@ Cuenta las ocurrencias de los símbolos "A", "G", "C", "T" de una cadena de ADN 
 Requisitos funcionales
 
 - Requisito 1: El programa necesita de un archivo que contenga la secuencia de ACGT a contar
+- The program should accept a path to a DNA sequence file as a command line argument.
+- The nucleotides to be counted should be passed as an optional command line argument.
+- If the optional nucleotide argument is omitted, the program should default to counting all 4 nucleotides: 'A', 'C', 'G', and 'T'.
 
 Requisitos no funcionales
 
-- Requisito 1
-- Requisito 2
-- Requisito n
+- The program will be developed in the Python programming language to ensure widespread compatibility and ease of use.
+- Reading of command line arguments should be implemented using the argparse library for Python to allow for flexible and user-friendly command-line interfaces.
+- ...
 
 
 
