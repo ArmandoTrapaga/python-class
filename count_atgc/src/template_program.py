@@ -61,7 +61,8 @@ import argparse
 # =                            functions
 
 parser = argparse.ArgumentParser()
-parser.add_argument("archivo", type=argparse.FileType('r'))
+parser.add_argument("archivo", type=argparse.FileType('r'), help="El archivo que se desea analizar")
+parser.add_argument("-n", "-nucleotides", type=str, nargs="+", default=["A", "T", "C", "G"], help="Ingresa que nucleotidos deseas conocer su incidencia, si no pones nada se te dara el de todos")
 
 def contar_atcg(archivo):
   num_bases = {'A': 0, 'T': 0, 'C': 0, 'G': 0} 
