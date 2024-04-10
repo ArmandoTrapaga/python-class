@@ -41,6 +41,7 @@ SEE ALSO
 
 # ===========================================================================
 # =                            imports
+import argparse 
 # ===========================================================================
 
 
@@ -59,6 +60,8 @@ SEE ALSO
 # ===========================================================================
 # =                            functions
 
+parser = argparse.ArgumentParser()
+parser.add_argument("archivo", type=argparse.FileType('r'))
 
 def contar_atcg(archivo):
   num_bases = {'A': 0, 'T': 0, 'C': 0, 'G': 0} 
