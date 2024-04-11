@@ -7,13 +7,26 @@ Este es un script de Python diseñado para contar las ocurrencias de los símbol
 El script se puede usar de la siguiente manera:
 
 ´´´bash
-    python contar_atcg.py <archivo>
+    python count_atcg.py <archivo>
 ´´´
 Donde <archivo> es la ruta del archivo que contiene la cadena de ADN a analizar.
+
+De manera alternativa tambien existe el argumento opcional -n o --nucleotidos para decidir cuales bases quieres conocer su incidencia, siendo que se ocuparia de la siguiente manera:
 
 ## Salida
 
 El script imprimirá el número de ocurrencias de cada símbolo "A", "T", "C" y "G" en la cadena de ADN.
+
+´´´bash
+    python count_atcg.py <archivo> -n A G
+´´´
+´´´bash
+    python count_atcg.py <archivo> --nucleotidos A G
+´´´
+
+## Salida
+
+El script imprimirá el número de ocurrencias de cada símbolo "A", "G" en la cadena de ADN.
 
 ## Control de errores
 
@@ -45,7 +58,7 @@ Este script está disponible bajo la licencia APACHE. Consulte el archivo LICENS
 
 ## Como citar
 
-Si utiliza este script en su trabajo, por favor cite: [información de citación].
+Si utiliza este script en su trabajo, por favor cite a aggonzal@lcg.unam.mx
 
 ## Contáctenos
 

@@ -14,17 +14,14 @@ La ejecución exitosa de estos casos de prueba asegura que el script está listo
 A continuación, presentamos los detalles de los casos de prueba. Cada caso de prueba incluye una descripción del caso de prueba, los datos de entrada utilizados y el resultado esperado.
     
     
-### Caso de prueba 1:
+### Caso de prueba 1: Comprobacion de un correcto conteo 
 
-- Descripción: Conteo de bases en archivo texto 
+- Descripción: Verificar que el script realice de manera adecuada el conteo de las bases, en el archivo proporcionado
 
-- Datos de entrada: Archivo texto creado en python:
+- Datos de entrada: Archivo de texto, Prueba.txt en la carpeta src junto al templete del programa:
 
-´´´python
-
-    contenido = 'A T T C C C G G GG '
-    with open('adn.txt', 'w') as archivo:
-    archivo.write(contenido)
+´´´bash
+    python count_atcg.py ../docs/Prueba.txt
 
 ´´´
 - Resultado esperado:
@@ -33,11 +30,24 @@ T: 2
 C: 3
 G: 4 
 
+### Caso de prueba 2: Comprobar el argumento opcional 
 
-### Caso de prueba 2: 
+- Descripción: Verificar que el script pueda regresar solo los nucleotidos que el usuario desee conocer 
+- Datos de entrada: Archivo de texto, Prueba.txt en la carpeta src junto al templete del programa:
 
-- Descripción: 
-- Datos de entrada: 
+´´´bash
+    python count_atcg.py ../docs/Prueba.txt -n A T
+´´´
 - Resultado esperado: 
+A:1
+T:2
 
-        
+### Caso de prueba 3: En caso de que el archivo propocionado no pueda ser procesado
+- Descripcion: Verificar que ante un error con el archivo, por default se imprima el mensaje de error
+- Datos de entrada: Archivo de texto, Prueba_error.txt en la carpeta src junto al templete del programa:
+
+´´´bash
+    python count_atcg.py ../docs/Prueba_error.txt 
+´´´
+- Resultado esperado:
+Error: Archivo no existente u no apropiado
