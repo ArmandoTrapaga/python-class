@@ -62,14 +62,14 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("archivo", type=argparse.FileType('r'), help="El archivo que se desea analizar")
-parser.add_argument("-n", "-nucleotides", type=str, nargs="+", default=["A", "T", "C", "G"], help="Ingresa que nucleotidos deseas conocer su incidencia, si no pones nada se te dara el de todos")
+parser.add_argument("-n", "--nucleotidos", type=str, nargs="+", default=["A", "T", "C", "G"], help="Ingresa que nucleotidos deseas conocer su incidencia, si no pones nada se te dara el de todos")
 
-def contar_atcg(archivo):
+def contar_atcg(archivo, n):
   num_bases = {'A': 0, 'T': 0, 'C': 0, 'G': 0} 
   try:
     with open(archivo, 'r') as txt:
       adn = txt.read().replace(' ', '').upper()
-      for base in adn:
+      for n in adn:
         num_bases[base] += 1
       for base, numero in num_bases.items():
         print(f"{base}: {numero}")
@@ -84,7 +84,8 @@ def contar_atcg(archivo):
 
 # ===========================================================================
 # =                            main
-contar_atcg('adn.txt')
+args = parser.parse_args()
+contar_atcg(args.archivo.name, args.nucleotidos)
 # ===========================================================================
 
 
