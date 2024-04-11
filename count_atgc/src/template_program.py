@@ -69,10 +69,10 @@ def contar_atcg(archivo, n):
   try:
     with open(archivo, 'r') as txt:
       adn = txt.read().replace(' ', '').upper()
-      for n in adn:
+      for base in adn:
         num_bases[base] += 1
-      for base, numero in num_bases.items():
-        print(f"{base}: {numero}")
+      for base in n:
+        print(f"{base}: {num_bases.get(base, 0)}")
   except:
     print('Error: Archivo no existente u no apropiado')
 
