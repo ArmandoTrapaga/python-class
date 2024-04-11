@@ -5,11 +5,11 @@ Conteo de ATCG
 
 VERSION
         
-1.0
+1.5
 
 AUTHOR
 
-[Su nombre aquí]       
+Armando Gael Gonzalez Trapaga       
 
 DESCRIPTION
 
