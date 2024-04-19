@@ -73,9 +73,8 @@ def contar_atcg(archivo, n):
         num_bases[base] += 1
       for base in n:
         print(f"{base}: {num_bases.get(base, 0)}")
-  except:
-    print('Error: Archivo no existente u no apropiado')
-
+  except IOError as Error:
+    print("sorry, couldn't find the file" + Error.strerror)
 # ===========================================================================
 
 
