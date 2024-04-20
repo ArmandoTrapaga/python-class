@@ -33,8 +33,7 @@ G: 4
 ### Caso de prueba 2: Comprobar el argumento opcional 
 
 - Descripción: Verificar que el script pueda regresar solo los nucleotidos que el usuario desee conocer 
-- Datos de entrada: Archivo de texto, Prueba.txt en la carpeta src junto al templete del programa:
-
+- Datos de entrada: Archivo de texto, Prueba.txt en la carpeta docs:
 ´´´bash
     python count_atcg.py ../docs/Prueba.txt -n A T
 ´´´
@@ -42,12 +41,34 @@ G: 4
 A:1
 T:2
 
-### Caso de prueba 3: En caso de que el archivo propocionado no pueda ser procesado
-- Descripcion: Verificar que ante un error con el archivo, por default se imprima el mensaje de error
-- Datos de entrada: Archivo de texto, Prueba_error.txt en la carpeta src junto al templete del programa:
+### Caso de prueba 3: En caso de que el archivo propocionado no exista
+- Descripcion: Revisar si el archivo no existe, a lo cual se imprimira el mensaje de error
+- Datos de entrada: Dejar vacio la entrada que pide el archivo:
 
 ´´´bash
-    python count_atcg.py ../docs/Prueba_error.txt 
+    python count_atcg.py 
 ´´´
 - Resultado esperado:
-Error: Archivo no existente u no apropiado
+sorry, couldn't find the file
+
+### Caso de prueba 4: En caso de que el archivo este vacio
+- Descripcion: Revisar si el archivo esta vacio, a lo cual se imprimira el mensaje de error
+- Datos de entrada: Archivo de texto, Prueba_error_Vacio.txt en la carpeta docs:
+
+´´´bash
+    python count_atcg.py ../docs/Prueba_error_Vacio.txt 
+´´´
+- Resultado esperado:
+sorry, this file is empty
+
+
+### Caso de prueba 5: En caso de que el archivo contenga un caracter invalido
+- Descripcion: Revisar si el archivo tiene algun caracter invalido en si contenido, a lo cual se imprimira el mensaje de error
+- Datos de entrada: Archivo de texto, Prueba_error_secuencia.txt en la carpeta docs:
+
+´´´bash
+    python count_atcg.py ../docs/Prueba_error_secuencia,txt 
+´´´
+
+- Resultado esperado:
+Sequence contains {base}, it is invalid character
