@@ -69,14 +69,16 @@ def contar_atcg(archivo, n):
   try:
     with open(archivo, 'r') as txt:
       adn = txt.read().replace(' ', '').upper()
+      if not adn:
+        raise ValueError("sorry, this file is empty")
       for base in adn:
+        if base not in 'ATCG':
+          raise ValueError(f"Sequence contains '{base}', it is invalid character")
         num_bases[base] += 1
       for base in n:
         print(f"{base}: {num_bases.get(base, 0)}")
   except IOError as Error:
-    print("sorry, couldn't find the file" + Error.strerror)
-  except ValueError as Error:
-    print("sorry, this file us empty")
+    print("sorry, couldn't find the file")
 # ===========================================================================
 
 
